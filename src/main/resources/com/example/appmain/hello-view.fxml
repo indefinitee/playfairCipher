@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appmain.Controller">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f8f9fa;" AnchorPane.leftAnchor="0.0">
+         <top>
+            <Pane prefHeight="67.0" prefWidth="800.0" style="-fx-background-color: #F0FFF0;" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Line endX="800.0" endY="67.0" startX="-1.52587890625E-5" startY="66.99998474121094" />
+                  <Label fx:id="titleHead" layoutX="75.0" layoutY="24.0" text="Шифр Плейфера">
+                     <font>
+                        <Font name="Liberation Sans" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                     <effect>
+                        <BoxBlur height="1.0" width="2.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <Pane prefHeight="538.0" prefWidth="200.0" style="-fx-background-color: #F5F5F5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="backBtn" layoutX="44.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToLang" prefHeight="25.0" prefWidth="116.0" text="Вернуться назад">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <font>
+                        <Font name="Liberation Sans" size="12.0" />
+                     </font>
+                  </Button>
+                  <Polygon fill="HONEYDEW" points="3.0517578125E-5, 339.0, 474.2928771972656, 0.0, 3.0517578125E-5, 0.0" stroke="WHITE" strokeType="INSIDE" />
+                  <Label fx:id="cipherDesc" alignment="TOP_LEFT" layoutX="7.0" layoutY="6.0" lineSpacing="8.0" prefHeight="307.0" prefWidth="191.0" text="Шифр Плейфера (Playfair Cipher) - Это ручная симметричная техника шифрования, то есть для шифрования и расшифрования применяется один и тот же криптографический ключ." wrapText="true">
+                     <font>
+                        <Font name="Liberation Sans" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exitBtn" layoutX="44.0" layoutY="476.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="116.0" text="Выход">
+                     <font>
+                        <Font name="Liberation Sans" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <Pane prefHeight="559.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Polyline fill="#f2fff2" layoutX="550.0" layoutY="252.0" points="-483.9999694824219, -48.0, -483.9999694824219, -23.0, 50.0, 281.0, 50.0, -252.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Pane layoutX="21.0" layoutY="165.0" prefHeight="102.0" prefWidth="208.0">
+                     <children>
+                        <TextField fx:id="keyInput" layoutX="45.0" layoutY="39.0" prefHeight="25.0" prefWidth="148.0" promptText="Ключ" />
+                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@key.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="keyTitle" layoutX="45.0" layoutY="13.0" prefHeight="25.0" prefWidth="148.0" text="Введите ключ" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="21.0" layoutY="25.0" prefHeight="102.0" prefWidth="208.0">
+                     <children>
+                        <TextField fx:id="encryptInput" layoutX="45.0" layoutY="39.0" prefHeight="25.0" prefWidth="148.0" promptText="Слово" />
+                        <ImageView fitHeight="21.0" fitWidth="33.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@lock.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="21.0" layoutY="311.0" prefHeight="102.0" prefWidth="208.0">
+                     <children>
+                        <TextField fx:id="decryptInput" layoutX="45.0" layoutY="39.0" prefHeight="25.0" prefWidth="148.0" promptText="Слово" />
+                        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@lock-open.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label fx:id="decryptTitle" layoutX="21.0" layoutY="298.0" text="Расшифрование">
+                     <font>
+                        <Font name="Rubik-Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="encryptBtn" layoutX="252.0" layoutY="54.0" mnemonicParsing="false" onAction="#buttonToEncrypt" prefHeight="45.0" prefWidth="164.0" text="Зашифровать">
+                     <font>
+                        <Font name="Rubik-Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="decryptBtn" layoutX="252.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonToDecrypt" prefHeight="45.0" prefWidth="164.0" text="Расшифровать">
+                     <font>
+                        <Font name="Rubik-Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <GridPane fx:id="gridMatrix" gridLinesVisible="true" layoutX="244.0" layoutY="140.0" opacity="0.94" prefHeight="180.0" prefWidth="180.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lab0_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" />
+                        <Label fx:id="lab1_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lab2_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                        <Label fx:id="lab0_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="lab1_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="lab2_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="lab3_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" />
+                        <Label fx:id="lab4_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" />
+                        <Label fx:id="lab5_0" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" />
+                        <Label fx:id="lab3_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label fx:id="lab4_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label fx:id="lab5_1" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label fx:id="lab0_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Label fx:id="lab1_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lab2_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="lab3_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label fx:id="lab4_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Label fx:id="lab5_2" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label fx:id="lab0_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <Label fx:id="lab1_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="lab2_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="lab3_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label fx:id="lab4_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Label fx:id="lab5_3" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Label fx:id="lab0_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.rowIndex="4" />
+                        <Label fx:id="lab1_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="lab2_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label fx:id="lab3_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label fx:id="lab4_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Label fx:id="lab5_4" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Label fx:id="lab0_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.rowIndex="5" />
+                        <Label fx:id="lab1_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="lab3_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label fx:id="lab4_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Label fx:id="lab5_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Label fx:id="lab2_5" alignment="CENTER" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Label fx:id="keyMatrix" layoutX="255.0" layoutY="113.0" text="Ключевая матрица">
+                     <font>
+                        <Font name="Rubik-Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="answerTitle" layoutX="21.0" layoutY="451.0" text="Готовый текст:">
+                     <font>
+                        <Font name="Rubik-Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="encryptTitle" layoutX="21.0" layoutY="12.0" text="Шифрование">
+                     <font>
+                        <Font name="Rubik-Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cipherText" alignment="TOP_LEFT" layoutX="176.0" layoutY="453.0" prefHeight="72.0" prefWidth="152.0" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currLanguage" layoutX="577.0" layoutY="509.0" text="RU">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
